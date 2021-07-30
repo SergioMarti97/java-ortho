@@ -1,4 +1,4 @@
-package dungeonViewer;
+package dungeonViewer.builders;
 
 import olcPGEApproach.gfx.images.Image;
 import olcPGEApproach.gfx.images.ImageTile;

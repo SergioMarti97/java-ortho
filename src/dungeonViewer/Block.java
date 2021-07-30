@@ -64,6 +64,7 @@ public class Block {
         position = new Vec2di(worldX, worldY);
         this.isWall = isWall;
         this.walls = walls;
+        transform();
     }
 
     /**
@@ -85,7 +86,7 @@ public class Block {
      */
     public void render(PipeLine pipeLine, ImageTile imageTile) {
         Mat4x4 matTranslation = MatrixMath.matrixMakeTranslation(position.getX(), 0.0f, position.getY());
-        pipeLine.setTransform(matTranslation);
+        pipeLine.setTransform(MatrixMath.matrixMultiplyMatrix(matTranslation, pipeLine.getWorldMatrix()));
         if ( isWall ) {
             for ( Map.Entry<CellSide, Wall> e : walls.entrySet()  ) {
                 pipeLine.renderMesh(
@@ -112,7 +113,9 @@ public class Block {
     */
 
     public void setWall(CellSide side, Vec2di texturePos) {
-        walls.get(side).setTexturePos(texturePos);
+        if ( walls.containsKey(side) ) {
+            walls.get(side).setTexturePos(texturePos);
+        }
     }
 
     public Vec2di getPosition() {
