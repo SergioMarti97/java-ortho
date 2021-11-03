@@ -4,6 +4,7 @@ import dungeonViewer.*;
 import dungeonViewer.builders.BlockBuilder;
 import olcPGEApproach.vectors.points2d.Vec2di;
 import orthographicViewer.CellSide;
+import orthographicViewer.World;
 
 import java.io.*;
 import java.util.Arrays;

@@ -14,7 +14,7 @@ public class DungeonViewerTest extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("DungeonViewer.fxml")));
         primaryStage.setTitle("Dungeon Viewer");
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setScene(new Scene(root, 1280, 820));
         primaryStage.show();
     }
 

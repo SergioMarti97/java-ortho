@@ -31,7 +31,11 @@ public class BlockWorld {
      */
     public BlockWorld(int w, int h) {
         size = new Vec2di(w, h);
-        blocks = new Block[size.getX() * size.getY()];
+        int s = size.getX() * size.getY();
+        blocks = new Block[s];
+        for (int i = 0; i < s; i++) {
+            blocks[i] = new Block();
+        }
     }
 
     /**
@@ -154,6 +158,10 @@ public class BlockWorld {
      */
     public Block getBlock(int x, int y) {
         return blocks[y * size.getX() + x];
+    }
+
+    public Block getBlock(Vec2di pos) {
+        return getBlock(pos.getX(), pos.getY());
     }
 
     /**

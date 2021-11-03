@@ -32,6 +32,11 @@ public class Wall {
         this.texturePos = texturePos;
     }
 
+    public Wall(Vec2di texturePos) {
+        wall = new Mesh();
+        this.texturePos = texturePos;
+    }
+
     public Mesh getWall() {
         return wall;
     }

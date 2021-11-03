@@ -74,8 +74,12 @@ public class Block {
      */
     public void transform() {
         Mat4x4 matTranslation = MatrixMath.matrixMakeTranslation(position.getX(), 0.0f, position.getY());
+        transform(matTranslation);
+    }
+
+    public void transform(Mat4x4 mat) {
         for ( Map.Entry<CellSide, Wall> e : walls.entrySet() ) {
-            MatrixMath.transformMesh(matTranslation, e.getValue().getWall());
+            MatrixMath.transformMesh(mat, e.getValue().getWall());
         }
     }
 
@@ -124,7 +128,6 @@ public class Block {
 
     public void setPosition(Vec2di position) {
         this.position = position;
-        transform();
     }
 
     public boolean isWall() {
