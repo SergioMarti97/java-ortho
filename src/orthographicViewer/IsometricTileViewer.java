@@ -106,7 +106,7 @@ public class IsometricTileViewer {
             CellSide side,
             ArrayList<Quad> render
     ) {
-        Vec3df[] points = new Vec3df[] { projCube[v1], projCube[v2], projCube[v3], projCube[v4]};
+        Vec3df[] points = new Vec3df[] { projCube[v1], projCube[v2], projCube[v3], projCube[v4] };
         Vec2di textPos = cell.getFace(side);
         render.add(new Quad(points, imgTile.getTileImage(textPos.getX(), textPos.getY())));
     }

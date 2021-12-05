@@ -45,7 +45,7 @@ public class OrthoGraphicViewer2 implements AbstractGame {
         final int pathWidth = 2;
         final int gap = 1;
         final int fullPathWidth = pathWidth + gap;
-        final int mazeW = 16;
+        final int mazeW = 32;
         final int mazeH = 16;
         final int worldW = mazeW * fullPathWidth;
         final int worldH = mazeH * fullPathWidth;
